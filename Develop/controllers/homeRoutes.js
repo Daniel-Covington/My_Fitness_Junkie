@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    const projectData = await Workout.findAll({
+    const workoutData = await Workout.findAll({
       include: [
         {
           model: User,
@@ -38,7 +38,7 @@ router.get('/workout/:id', async (req, res) => {
       ],
     });
 
-    const workout = WorkouttData.get({ plain: true });
+    const workout = WorkoutData.get({ plain: true });
 
     res.render('workout', {
       ...workout,
