@@ -36,6 +36,8 @@
   </div>
 
   <!-- Render script for logged in users only -->
+  <!--added scipt to use axios instead of fetch (own API instead of external API) -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
