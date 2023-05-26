@@ -5,26 +5,29 @@
   <meta charset="UTF-8">
   <title>Fitness Junkie</title>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald&family=Raleway:wght@300&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body id="body">
   <header>
-    <h1>Welcome to Fitness Junkie!</h1>
+    <h1 class="header .bg-dark">Welcome to My Fitness Junkie!</h1>
     {{#if logged_in}}
       <a href="/profile">Go to Profile</a>
       <a href="/logout">Logout</a>
     {{else}}
-      <a href="/login">Login</a>
+      {{!-- <a href="/login">Login</a> --}}
     {{/if}}
   </header>
 
   <main>
-    <h2>Recent Workouts</h2>
+    <h2 class="header">Recent Workouts</h2>
     {{#if workouts.length}}
       <ul>
         {{#each workouts as |workout|}}
-          <li>
-            <a href="/workout/{{workout.id}}">{{workout.type}}</a> - 
+          <li class="workoutText">
+            <a class="workouts" href="/workout/{{workout.id}}">{{workout.type}}</a> - 
             Duration: {{workout.duration}} minutes - 
             Intensity: {{workout.intensity}} - 
             Calories Burned: {{workout.caloriesBurned}}
@@ -36,9 +39,7 @@
     {{/if}}
   </main>
 
-  <footer>
-    <p>© 2023 Fitness Junkie</p>
-  </footer>
+ 
 </body>
 
 </html>
