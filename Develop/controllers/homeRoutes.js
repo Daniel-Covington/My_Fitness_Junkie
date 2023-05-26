@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    // Get all workouts and JOIN with user data
     const workoutData = await Workout.findAll({
       include: [
         {
@@ -56,7 +56,7 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await axios.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: workout }],
+      include: [{ model: Workout }],
     });
 
     const user = userData.get({ plain: true });
