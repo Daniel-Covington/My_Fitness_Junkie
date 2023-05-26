@@ -1,0 +1,29 @@
+[
+  {
+      "type": "Cardio",
+      "duration": 30.00,
+      "intensity": "High",
+      "caloriesBurned": 200.00,
+      "date": "2023-05-24T06:00:00.000Z",
+      "user_id": 1,
+      "routine_id": 1
+  },
+  {
+      "type": "Weightlifting",
+      "duration": 60.00,
+      "intensity": "Medium",
+      "caloriesBurned": 250.00,
+      "date": "2023-05-24T12:00:00.000Z",
+      "user_id": 2,
+      "routine_id": 2
+  },
+  {
+      "type": "Yoga",
+      "duration": 45.00,
+      "intensity": "Low",
+      "caloriesBurned": 150.00,
+      "date": "2023-05-24T18:00:00.000Z",
+      "user_id": 3,
+      "routine_id": 3
+  }
+]

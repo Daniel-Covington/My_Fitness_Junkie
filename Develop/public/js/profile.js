@@ -1,47 +1,48 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#project-name').value.trim();
-  const needed_funding = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#project-desc').value.trim();
+  const type = document.querySelector('#workout-type').value.trim();
+  const duration = document.querySelector('#workout-duration').value.trim();
+  const intensity = document.querySelector('#workout-intensity').value.trim();
+  const caloriesBurned = document.querySelector('#workout-calories').value.trim();
 
-//   if (name && needed_funding && description) {
-//     const response = await fetch(`/api/projects`, {
-//       method: 'POST',
-//       body: JSON.stringify({ name, needed_funding, description }),
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//     });
+  if (type && duration && intensity && caloriesBurned) {
+    const response = await fetch(`/api/workouts`, {
+      method: 'POST',
+      body: JSON.stringify({ type, duration, intensity, caloriesBurned }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-//     if (response.ok) {
-//       document.location.replace('/profile');
-//     } else {
-//       alert('Failed to create project');
-//     }
-//   }
- };
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert('Failed to create workout');
+    }
+  }
+};
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/projects/${id}`, {
+    const response = await fetch(`/api/workouts/${id}`, {
       method: 'DELETE',
     });
 
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to delete project');
+      alert('Failed to delete workout');
     }
   }
 };
 
 document
-  .querySelector('.new-project-form')
+  .querySelector('.new-workout-form')
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.project-list')
+  .querySelector('.workout-list')
   .addEventListener('click', delButtonHandler);
