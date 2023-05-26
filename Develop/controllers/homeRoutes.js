@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { default: axios } = require('axios');
 const { Workout, User } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -29,7 +30,7 @@ router.get('/', async (req, res) => {
 
 router.get('/workout/:id', async (req, res) => {
   try {
-    const workoutData = await Workout.findByPk(req.params.id, {
+    const workoutData = await axios.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -53,7 +54,7 @@ router.get('/workout/:id', async (req, res) => {
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
+    const userData = await axios.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Workout }],
     });
