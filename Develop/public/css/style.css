@@ -13,3 +13,69 @@
   text-decoration: underline;
 }
 
+#body{
+  background-color: black;
+  
+}
+
+#copytag{
+  font-family: Oswald;
+  text-align: center;
+  color: #065b83;
+  font-weight: bold;
+}
+
+.button{
+  background-color: #065B83;
+  padding: 10px 10px;
+  font-family: Oswald;
+  border-radius: 15px;
+  transition-duration: 0.4s;
+  display: block;
+  /* justify-content: center;
+  align-items: center;
+  height: 30%;
+  border: 3px solid green; */
+  /* width: 20% */
+margin: 0 auto;
+
+}
+
+.button:hover{
+  background-color: white;
+  color: #065b83;
+}
+
+.header{
+  font-family: Oswald;
+  font-weight: bold;
+  padding: 5px;
+  border-bottom: double blue;
+  color: #065b83;
+  text-align: center;
+}
+
+#myFitness{
+    font-family: Oswald;
+    color: #065B83;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5rem; 
+  }
+
+
+.workouts{
+  font-family: Oswald;
+  color: #065b83;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.workoutText{
+  font-family: Oswald;
+  color: #065B83;
+}

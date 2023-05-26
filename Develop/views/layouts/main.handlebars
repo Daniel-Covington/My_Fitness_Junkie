@@ -1,30 +1,32 @@
-homepage
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fitness Junkie</title>
+  <title>My Fitness Junkie</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
+  {{!-- bootstrap css link if needed <link rel="stylesheet" href="/css/bootstrap.css"> --}}
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald&family=Raleway:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="barbell">🏋️</span>
-        <a href="/">Fitness Junkie</a>
-      </h1>
+      <div><h1>
+        <span role="img" aria-label="barbell"></span>
+        <a id="myFitness" href="/">🏋️My Fitness Junkie🏋️</a>
+      </h1></div>
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/profile">Profile</a> |
         <button class="no-button" id="logout">Logout</button>
         {{else}}
-        <a href="/login">Login</a>
+        <a class="button" href="/login">Login</a>
         {{/if}}
       </nav>
     </header>
@@ -33,7 +35,7 @@ homepage
       {{{ body }}}
     </main>
     <footer>
-      <p>© 2023 Fitness Junkie</p>
+      <p id="copytag">© 2023 Fitness Junkie</p>
     </footer>
   </div>
 
@@ -43,6 +45,9 @@ homepage
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+
+  {{!-- bootstrap js link if needed
+  <script src="/js/bootstrap.js"></script> --}}
 </body>
 
 </html>
