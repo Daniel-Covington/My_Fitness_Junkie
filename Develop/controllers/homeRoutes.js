@@ -1,10 +1,11 @@
 const router = require('express').Router();
+const { default: axios } = require('axios');
 const { Workout, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    // Get all workouts and JOIN with user data
     const workoutData = await Workout.findAll({
       include: [
         {
@@ -29,7 +30,7 @@ router.get('/', async (req, res) => {
 
 router.get('/workout/:id', async (req, res) => {
   try {
-    const workoutData = await Workout.findByPk(req.params.id, {
+    const workoutData = await axios.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -53,9 +54,9 @@ router.get('/workout/:id', async (req, res) => {
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
+    const userData = await axios.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: workout }],
+      include: [{ model: Workout }],
     });
 
     const user = userData.get({ plain: true });
