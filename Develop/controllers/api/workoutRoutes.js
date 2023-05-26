@@ -1,10 +1,11 @@
 const router = require('express').Router();
-const { Workout } = require('../../models');
+const { default: axios } = require('axios');
+// const { Workout } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newWorkout = await Workout.create({
+    const newWorkout = await axios.create({
       ...req.body,
       user_id: req.session.user_id,
     });
@@ -17,7 +18,7 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const workoutData = await Workout.destroy({
+    const workoutData = await axios.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
