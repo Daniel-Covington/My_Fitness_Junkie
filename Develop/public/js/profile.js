@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const bloodPressure = document
       .querySelector("#user-blood-pressure")
       .value.trim();
-    // const bodyMeasurements = document.querySelector('#user-body-measurements').value.trim();
+    // const bodyMeasurements = document.querySelector('#user-body-measurements').value.trim();    
 
     if (
       weight &&
