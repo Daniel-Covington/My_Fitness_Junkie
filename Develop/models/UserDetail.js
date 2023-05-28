@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class UserDetail extends Model {}
 
@@ -8,68 +8,68 @@ UserDetail.init(
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true, 
+      primaryKey: true,
       autoIncrement: true,
     },
     user_id: {
-      type: DataTypes.INTEGER, 
+      type: DataTypes.INTEGER,
       references: {
-        model: 'user',
-        key: 'id',
+        model: "user",
+        key: "id",
       },
     },
     weight: {
-      type: DataTypes.DECIMAL(5,2),
+      type: DataTypes.DECIMAL(5, 2),
       allowNull: false,
     },
     height: {
-      type: DataTypes.DECIMAL(5,2),
+      type: DataTypes.DECIMAL(5, 2),
       allowNull: false,
     },
     bmi: {
-      type: DataTypes.DECIMAL(5,2),
-      allowNull: true, 
+      type: DataTypes.DECIMAL(5, 2),
+      allowNull: true,
     },
     goal_weight: {
-      type: DataTypes.DECIMAL(5,2),
-      allowNull: true, 
+      type: DataTypes.DECIMAL(5, 2),
+      allowNull: true,
     },
     activity_level: {
-      type: DataTypes.ENUM('low', 'moderate', 'high'), 
-      allowNull: true, 
+      type: DataTypes.ENUM("low", "moderate", "high"),
+      allowNull: true,
     },
     fitness_goal: {
-      type: DataTypes.TEXT, 
-      allowNull: true, 
+      type: DataTypes.TEXT,
+      allowNull: true,
     },
     dietary_preference: {
-      type: DataTypes.TEXT, 
-      allowNull: true, 
+      type: DataTypes.TEXT,
+      allowNull: true,
     },
     resting_heart_rate: {
-      type: DataTypes.INTEGER, 
-      allowNull: true, 
+      type: DataTypes.INTEGER,
+      allowNull: true,
     },
     blood_pressure: {
-      type: DataTypes.STRING, 
-      allowNull: true, 
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     sleep_data: {
-      type: DataTypes.JSON, 
-      allowNull: true, 
+      type: DataTypes.JSON,
+      allowNull: true,
     },
     body_measurements: {
-      type: DataTypes.JSON, 
-      allowNull: true, 
+      type: DataTypes.JSON,
+      allowNull: true,
     },
   },
   {
     sequelize,
-    timestamps: true, 
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user_detail',
+    modelName: "userdetail",
   }
 );
 
-module.exports = UserDetail; 
+module.exports = UserDetail;

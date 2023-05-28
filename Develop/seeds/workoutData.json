@@ -1,29 +1,70 @@
 [
-  {
-      "type": "Cardio",
-      "duration": 30.00,
-      "intensity": "High",
-      "caloriesBurned": 200.00,
-      "date": "2023-05-24T06:00:00.000Z",
-      "user_id": 1,
-      "routine_id": 1
-  },
-  {
-      "type": "Weightlifting",
-      "duration": 60.00,
-      "intensity": "Medium",
-      "caloriesBurned": 250.00,
-      "date": "2023-05-24T12:00:00.000Z",
-      "user_id": 2,
-      "routine_id": 2
-  },
-  {
-      "type": "Yoga",
-      "duration": 45.00,
-      "intensity": "Low",
-      "caloriesBurned": 150.00,
-      "date": "2023-05-24T18:00:00.000Z",
-      "user_id": 3,
-      "routine_id": 3
-  }
-]
+    {
+        "type": "Cardio",
+        "description": "Morning cardio session",
+        "duration": 30.00,
+        "distance": 5.0,
+        "sets": null,
+        "reps": null,
+        "weight": null,
+        "intensity": "High",
+        "exercise_list": null,
+        "heart_rate": 130,
+        "caloriesBurned": 200.00,
+        "rating": 4,
+        "notes": "Felt good, could have pushed a bit harder.",
+        "date": "2023-05-24T06:00:00.000Z",
+        "user_id": 1
+    },
+    {
+        "type": "Strength",
+        "description": "Full body weightlifting workout",
+        "duration": 60.00,
+        "distance": null,
+        "sets": 3,
+        "reps": 10,
+        "weight": 60,
+        "intensity": "Medium",
+        "exercise_list": "Squats, Deadlifts, Bench Press",
+        "heart_rate": null,
+        "caloriesBurned": 250.00,
+        "rating": 5,
+        "notes": "PR on deadlift!",
+        "date": "2023-05-24T12:00:00.000Z",
+        "user_id": 2
+    },
+    {
+        "type": "Strength",
+        "description": "Full body weightlifting workout",
+        "duration": 60.00,
+        "distance": null,
+        "sets": 3,
+        "reps": 10,
+        "weight": 60,
+        "intensity": "Medium",
+        "exercise_list": "Squats, Deadlifts, Bench Press",
+        "heart_rate": null,
+        "caloriesBurned": 250.00,
+        "rating": 5,
+        "notes": "PR on deadlift!",
+        "date": "2023-05-24T12:00:00.000Z",
+        "user_id": 3
+    },
+    {
+        "type": "Yoga",
+        "description": "Evening yoga to relax",
+        "duration": 45.00,
+        "distance": null,
+        "sets": null,
+        "reps": null,
+        "weight": null,
+        "intensity": "Low",
+        "exercise_list": "Sun Salutations, Warrior Pose, Downward Dog",
+        "heart_rate": 80,
+        "caloriesBurned": 150.00,
+        "rating": 4,
+        "notes": "Very relaxing session, need to work on flexibility.",
+        "date": "2023-05-24T18:00:00.000Z",
+        "user_id": 4
+    }
+  ]

@@ -1,16 +1,17 @@
-const router = require('express').Router();
-const axios = require('axios');
-const { Workout, User } = require('../models');
-const withAuth = require('../utils/auth');
+const router = require("express").Router();
+const axios = require("axios");
+const { Workout, User, UserDetail } = require("../models");
+const withAuth = require("../utils/auth");
 
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
+  console.log("Inside /profile route");
   try {
     // Get all workouts and JOIN with user data
     const workoutData = await Workout.findAll({
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ["name"],
         },
       ],
     });
@@ -19,31 +20,31 @@ router.get('/', async (req, res) => {
     const workouts = workoutData.map((workout) => workout.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      workouts, 
-      logged_in: req.session.logged_in 
+    res.render("homepage", {
+      workouts,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/workout/:id', async (req, res) => {
+router.get("/workout/:id", async (req, res) => {
   try {
     const workoutData = await Workout.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ["name"],
         },
       ],
     });
 
-    const workout = WorkoutData.get({ plain: true });
+    const workout = workoutData.get({ plain: true });
 
-    res.render('workout', {
+    res.render("workout", {
       ...workout,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -51,32 +52,37 @@ router.get('/workout/:id', async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
+router.get("/profile", withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Workout }],
+      attributes: { exclude: ["password"] },
+      include: [{ model: Workout }, { model: UserDetail }],
     });
+
+    console.log("userData: ", userData);
+    console.log("req.session: ", req.session);
 
     const user = userData.get({ plain: true });
 
-    res.render('profile', {
+    console.log(user);
+    res.render("profile", {
       ...user,
-      logged_in: true
+      ...user.userdetail,
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect("/profile");
     return;
   }
 
-  res.render('login');
+  res.render("login");
 });
 
 module.exports = router;

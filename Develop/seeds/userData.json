@@ -1,17 +1,22 @@
 [
   {
-    "name": "Daniel C",
-    "email": "danielc@hotmail.com",
-    "password": "password12345"
+    "name": "Daniel Covington",
+    "email": "dc@email.com",
+    "password": "password"
   },
   {
     "name": "Annalee B",
-    "email": "Annaleeb@gmail.com",
-    "password": "password12345"
+    "email": "annaleeb@email.com",
+    "password": "password"
   },
   {
     "name": "Josue L",
-    "email": "Josuel@aol.com",
-    "password": "password12345"
+    "email": "josue@email.com",
+    "password": "password"
+  },
+  {
+    "name": "Sam",
+    "email": "sam@email.com",
+    "password": "password"
   }
 ]
