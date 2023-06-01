@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { default: axios } = require('axios');
+// const { default: axios } = require('axios');
 const { Workout, User } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      workouts, 
+
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
 
 router.get('/workout/:id', async (req, res) => {
   try {
-    const workoutData = await axios.findByPk(req.params.id, {
+    const workoutData = await Workout.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -39,7 +39,7 @@ router.get('/workout/:id', async (req, res) => {
       ],
     });
 
-    const workout = WorkoutData.get({ plain: true });
+    const workout = workoutData.get({ plain: true });
 
     res.render('workout', {
       ...workout,
@@ -54,7 +54,7 @@ router.get('/workout/:id', async (req, res) => {
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
-    const userData = await axios.findByPk(req.session.user_id, {
+    const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: workout }],
     });
