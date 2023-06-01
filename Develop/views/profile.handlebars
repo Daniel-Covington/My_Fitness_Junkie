@@ -228,6 +228,9 @@
                 <div class="col-md-6">
                     <div class="card">
                         <h5 class="card-header bg-primary text-white">Current Workouts</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Workout data tables from the last week.</h6>
+                        {{!-- Chart HTML element  --}}
+                        <canvas id="line-chart"></canvas>
                         <ul class="list-group list-group-flush">
                             {{#if workouts.length}}
                             {{#each workouts as |workout|}}
