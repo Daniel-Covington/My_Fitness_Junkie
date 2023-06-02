@@ -1,7 +1,9 @@
 const router = require("express").Router();
 const axios = require("axios");
-const { Workout, User, UserDetail } = require("../models");
+const { Workout, User, UserDetail, WeightHistory } = require("../models");
 const withAuth = require("../utils/auth");
+const { Op } = require("sequelize");
+const moment = require("moment");
 
 router.get("/", async (req, res) => {
   console.log("Inside /profile route");
@@ -48,6 +50,44 @@ router.get("/workout/:id", async (req, res) => {
     });
   } catch (err) {
     res.status(500).json(err);
+  }
+});
+
+router.get("/api/weighthistory/chart", withAuth, async (req, res) => {
+  try {
+      // Retrieve the range query parameter from the request URL
+      const range = req.query.range;
+
+      // Calculate the start date based on the range
+      const startDate = moment().subtract(1, range).format("YYYY-MM-DD");
+
+      // Get the weight history for the logged-in user within the specified range
+      const weightHistory = await WeightHistory.findAll({
+          where: {
+              user_id: req.session.user_id,
+              date: {
+                  [Op.gte]: startDate
+              }
+          },
+          order: [["date", "ASC"]],
+      });
+
+      if (!weightHistory) {
+          throw new Error('Weight history not found');
+      }
+
+      // Convert the weight history data into chart data
+      const chartData = weightHistory.map(entry => ({
+          date: entry.date,
+          weight: entry.weight,
+          bmi: entry.bmi
+      }));
+
+      // Send the weight chart data as a JSON response
+      res.json(chartData);
+  } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: "Failed to retrieve weight chart data" });
   }
 });
 
