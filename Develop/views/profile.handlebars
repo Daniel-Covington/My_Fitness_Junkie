@@ -2,9 +2,21 @@
     <div class="jumbotron text-center">
         <h1 class="display-4">Welcome, {{name}}!</h1>
         <hr class="my-4">
-        <p>Update your details or add new workout below.</p>
+        {{!-- <p>Update your details or add new workout below.</p> --}}
     </div>
 
+{{!-- This is where the data charts will be displayed --}}
+
+
+
+{{!-- This will load the top 6 popular workouts --}}
+<div class="container center-align" id="popular-trailers">
+      <h2 class="white-text texttrailer">Don't know to start? Check out these workouts!</h2>
+      <div id="workouts-container"></div>
+    </div>
+
+
+{{!-- This will load the user details --}}
     <div class="row">
         <div class="col-md-6">
             <div class="card">
@@ -258,4 +270,6 @@
             </form>
         </div>
     </div>
+
+
     <script src="./js/profile.js"></script>
