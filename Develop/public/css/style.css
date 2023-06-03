@@ -1,20 +1,7 @@
-/* .no-button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: #1b89bc;
-  text-decoration: none;
-  font-size: 100%;
-}
--- I think these can be taken out they used to be for the old login button
-.no-button:hover {
-  color: #6667ab;
-  text-decoration: underline;
-} */
-
-.body {
-  background-color: rgb(12, 12, 12);
+body {
+  background-image: url("/Develop/assets/nike-run.jpg") !important;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #copytag {
@@ -177,20 +164,12 @@ body {
   font-family: 'Oswald', sans-serif;
 }
 
-
 #email-login, #password-login, #name-signup, #email-signup, #password-signup  {
   width: 70%;
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
-
-/* #email-login, #password-login {
-  
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-} */
 
 .login-form .form-group button,
 .signup-form .form-group button {
@@ -221,3 +200,5 @@ body {
   text-align: center;
   margin-bottom: 20px;
 }
+
+
