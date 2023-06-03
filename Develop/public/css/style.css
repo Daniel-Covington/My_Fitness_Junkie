@@ -25,22 +25,11 @@
 }
 
 .btn {
-<<<<<<< HEAD
-  background-color: #065B83;
-=======
   background-color: #065b83;
->>>>>>> 6e1d98f73852fab7d0e432a247744832008e2f2e
   padding: 10px 10px;
   font-family: Oswald;
   border-radius: 15px;
   transition-duration: 0.4s;
-<<<<<<< HEAD
-}
-.btn:hover {
-  background-color: white;
-  color: #065B83;
-=======
->>>>>>> 6e1d98f73852fab7d0e432a247744832008e2f2e
 }
 
 .btn:hover {
@@ -130,63 +119,3 @@
   cursor: pointer;
 }
 
-
-<<<<<<< HEAD
-
-
-
-
-body {
-  background-color: #181818;
-  color: #FFFFFF;
-}
-
-.jumbotron {
-  background-color: #282828;
-}
-
-.card {
-  background-color: #282828;
-}
-
-.card-header {
-  background-color: #383838;
-}
-
-.modal-content {
-  background-color: #282828;
-}
-
-.modal-header {
-  border-bottom: 1px solid #383838;
-}
-
-.modal-footer {
-  border-top: 1px solid #383838;
-}
-
-.form-control {
-  background-color: #383838;
-  color: #FFFFFF;
-  border: 1px solid #484848;
-}
-
-.form-control:focus {
-  border-color: #585858;
-  box-shadow: none;
-}
-
-.btn-primary {
-  background-color: #b92d2b;
-  border-color: #a92726;
-}
-
-.card-body {
-  color: #FFFFFF;
-}
-
-body {
-  font-family: 'Oswald', sans-serif;
-}
-=======
->>>>>>> 6e1d98f73852fab7d0e432a247744832008e2f2e
