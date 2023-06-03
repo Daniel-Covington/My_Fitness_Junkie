@@ -13,36 +13,42 @@
   text-decoration: underline;
 }
 
-#body{
+.body {
   background-color: black;
-  
 }
 
-#copytag{
+#copytag {
   font-family: Oswald;
   text-align: center;
-  color: #065b83;
+  color: #f2f2c9;
   font-weight: bold;
 }
 
 .btn {
+<<<<<<< HEAD
   background-color: #065B83;
+=======
+  background-color: #065b83;
+>>>>>>> 6e1d98f73852fab7d0e432a247744832008e2f2e
   padding: 10px 10px;
   font-family: Oswald;
   border-radius: 15px;
   transition-duration: 0.4s;
+<<<<<<< HEAD
 }
 .btn:hover {
   background-color: white;
   color: #065B83;
+=======
+>>>>>>> 6e1d98f73852fab7d0e432a247744832008e2f2e
 }
 
-.button:hover{
+.btn:hover {
   background-color: white;
   color: #065b83;
 }
 
-.header{
+.header {
   font-family: Oswald;
   font-weight: bold;
   padding: 5px;
@@ -51,19 +57,18 @@
   text-align: center;
 }
 
-#myFitness{
-    font-family: Oswald;
-    color: #065B83;
-    font-weight: bold;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 1.5rem; 
-  }
+#myFitness {
+  font-family: Oswald;
+  color: #065b83;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.5rem;
+}
 
-
-.workouts{
+.workouts {
   font-family: Oswald;
   color: #065b83;
   font-weight: bold;
@@ -71,12 +76,62 @@
   text-align: center;
 }
 
-.workoutText{
+.workoutText {
   font-family: Oswald;
-  color: #065B83;
+  color: #065b83;
+}
+
+#AboutUs {
+  font-family: Oswald;
+  font-weight: bold;
+  color: #f2f2c9;
+}
+
+#AboutUsText {
+  font-family: Oswald;
+  font-weight: 100;
+  color: #f2f2c9;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: #383838
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#welcome {
+  color:#f2f2c9;
+  font-family: Oswald;
+  font-weight: bold;
+}
+
+#login{
+  color: #f2f2c9;
+  font-family: Oswald;
+  justify-content: center;
+}
+
+#signup{
+  color: #f2f2c9;
+  font-family: Oswald;
+}
+
+.label{
+  color: #f2f2c9;
+  font-family: Oswald;
+}
+
+.form-input{
+  border: 3px solid #555;
+  cursor: pointer;
 }
 
 
+<<<<<<< HEAD
 
 
 
@@ -133,3 +188,5 @@ body {
 body {
   font-family: 'Oswald', sans-serif;
 }
+=======
+>>>>>>> 6e1d98f73852fab7d0e432a247744832008e2f2e
