@@ -10,23 +10,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Raleway:wght@300&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="body">
   <header>
-    <h1>Welcome to Fitness Junkie!</h1>
+    <h1 id="welcome">Welcome to Fitness Junkie!</h1>
     {{#if logged_in}}
-      <a href=“/profile”>Go to Profile</a>
-      <a href=“/logout”>Logout</a>
+      <a href="/profile”>Go to Profile</a>
+      <a href="/logout”>Logout</a>
     {{else}}
-      <a href=“/login”>Login</a>
+      {{!-- <a href="/login”>Login</a> --}}
     {{/if}}
   </header>
   <main>
-    <h2>About Us</h2>
-    <p> We are a group of fitness enthusiasts who want to help you achieve your fitness goals.
+    <div class="card">
+    <h2 id="AboutUs">About Us</h2>
+    <p id="AboutUsText"> We are a group of fitness enthusiasts who want to help you achieve your fitness goals.
       We have a variety of workouts and recipes to help you get started on your fitness journey.
       We also have a community forum where you can connect with other fitness junkies and share your progress.
       We hope you enjoy our site and find it useful!
       </p>
+      </div>
+
 
       <div class="container mt-5"></div>
   <div class="card">
@@ -44,51 +47,49 @@
     </div>
   </div>
   </div>
-      <div class=“row”>
-  <div class=“col-md-6”>
-    <h2>Login</h2>
-    <form class=“form login-form”>
-      <div class=“form-group”>
-        <label for=“email-login”>email:</label>
-        <input class=“form-input” type=“text” id=“email-login” />
+      <div class="row">
+  <div class="col-md-6">
+    <h2 id="login">Login</h2>
+    <form class="form login-form">
+      <div class="form-group">
+        <label class="label" for="email-login">Email:</label>
+        <input class="form-input" type="text" id="email-login" />
       </div>
-      <div class=“form-group”>
-        <label for=“password-login”>password:</label>
-        <input class=“form-input” type=“password” id=“password-login” />
+      <div class="form-group">
+        <label class="label" for="password-login">Password:</label>
+        <input class="form-input" type="password" id="password-login" />
       </div>
-      <div class=“form-group”>
-        <button class=“btn btn-primary” type=“submit”>login</button>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Login</button>
       </div>
     </form>
   </div>
-   <div class=“col-md-6”>
-    <h2>Signup</h2>
-    <form class=“form signup-form”>
-      <div class=“form-group”>
-        <label for=“name-signup”>name:</label>
-        <input class=“form-input” type=“text” id=“name-signup” />
+   <div class="col-md-6">
+    <h2 id="signup">Signup</h2>
+    <form class="form signup-form">
+      <div class="form-group">
+        <label class="label" for="name-signup">Name:</label>
+        <input class="form-input" type="text" id="name-signup" />
       </div>
-      <div class=“form-group”>
-        <label for=“email-signup”>email:</label>
-        <input class=“form-input” type=“text” id=“email-signup” />
+      <div class="form-group">
+        <label class="label" for="email-signup">Email:</label>
+        <input class="form-input" type="text" id="email-signup" />
       </div>
-      <div class=“form-group”>
-        <label for=“password-signup”>password:</label>
-        <input class=“form-input” type=“password” id=“password-signup” />
+      <div class="form-group">
+        <label class="label" for="password-signup">Password:</label>
+        <input class="form-input" type="password" id="password-signup" />
       </div>
-      <div class=“form-group”>
-        <button class=“btn btn-primary” type=“submit”>signup</button>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Signup</button>
       </div>
     </form>
   </div>
 </div>
   </main>
-  <footer>
-    <p>© 2023 Fitness Junkie</p>
-  </footer>
+
 </body>
-<script src=“./js/login.js”></script>
-<script src=“./js/homepage.js”></script>
+<script src="./js/login.js"></script>
+<script src="./js/homepage.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment"></script>
 </html>
