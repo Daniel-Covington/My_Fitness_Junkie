@@ -2,8 +2,7 @@ const router = require("express").Router();
 const axios = require("axios");
 const { Workout, User, UserDetail, WeightHistory } = require("../models");
 const withAuth = require("../utils/auth");
-const { Op } = require("sequelize");
-const moment = require("moment");
+
 
 router.get("/", async (req, res) => {
   console.log("Inside /profile route");
