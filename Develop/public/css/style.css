@@ -1,4 +1,4 @@
-.no-button {
+/* .no-button {
   background: none;
   border: none;
   padding: 0;
@@ -7,25 +7,25 @@
   text-decoration: none;
   font-size: 100%;
 }
-
+-- I think these can be taken out they used to be for the old login button
 .no-button:hover {
-  color: #065b83;
+  color: #6667ab;
   text-decoration: underline;
-}
+} */
 
 .body {
-  background-color: black;
+  background-color: rgb(12, 12, 12);
 }
 
 #copytag {
   font-family: Oswald;
   text-align: center;
-  color: #f2f2c9;
+  color: #a92726;
   font-weight: bold;
 }
 
 .btn {
-  background-color: #065b83;
+  background-color: #6667ab;
   padding: 10px 10px;
   font-family: Oswald;
   border-radius: 15px;
@@ -34,21 +34,21 @@
 
 .btn:hover {
   background-color: white;
-  color: #065b83;
+  color: #6667ab;
 }
 
 .header {
   font-family: Oswald;
   font-weight: bold;
   padding: 5px;
-  border-bottom: double blue;
+  border-bottom: double rgb(53, 53, 58);
   color: #065b83;
   text-align: center;
 }
 
 #myFitness {
   font-family: Oswald;
-  color: #065b83;
+  color: #a92726;
   font-weight: bold;
   text-align: center;
   display: flex;
@@ -73,50 +73,55 @@
 #AboutUs {
   font-family: Oswald;
   font-weight: bold;
-  color: #f2f2c9;
+  color: #a92726;
 }
 
 #AboutUsText {
   font-family: Oswald;
   font-weight: 100;
-  color: #f2f2c9;
+  color: #a92726;
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(247, 244, 244, 0.2);
   transition: 0.3s;
   background-color: #383838
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(240, 235, 235, 0.2);
 }
 
 #welcome {
-  color:#f2f2c9;
+  color:#a92726;
   font-family: Oswald;
   font-weight: bold;
 }
 
 #login{
-  color: #f2f2c9;
+  color: #a92726;
   font-family: Oswald;
-  justify-content: center;
+  font-weight: bold;
+  border-bottom: double #a92726;
 }
 
 #signup{
-  color: #f2f2c9;
+  color: #a92726;
   font-family: Oswald;
+  font-weight: bold;
+  border-bottom: double #a92726;
 }
 
 .label{
-  color: #f2f2c9;
+  color: whitesmoke;
   font-family: Oswald;
 }
 
 .form-input{
-  border: 3px solid #555;
+  border: 3px double #a92726;
   cursor: pointer;
+  background-color: #383838;
+  color: whitesmoke;
 }
 
 body {
@@ -150,18 +155,18 @@ body {
 
 .form-control {
   background-color: #383838;
-  color: #FFFFFF;
+  color: #ffffff;
   border: 1px solid #484848;
 }
 
 .form-control:focus {
-  border-color: #585858;
+  border-color: #6667ab;
   box-shadow: none;
 }
 
 .btn-primary {
-  background-color: #b92d2b;
-  border-color: #a92726;
+  background-color: #6667ab;
+  border-color: #383838;
 }
 
 .card-body {
