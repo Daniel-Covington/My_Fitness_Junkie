@@ -25,20 +25,16 @@
   font-weight: bold;
 }
 
-.button{
+.btn {
   background-color: #065B83;
   padding: 10px 10px;
   font-family: Oswald;
   border-radius: 15px;
   transition-duration: 0.4s;
-  display: block;
-  /* justify-content: center;
-  align-items: center;
-  height: 30%;
-  border: 3px solid green; */
-  /* width: 20% */
-margin: 0 auto;
-
+}
+.btn:hover {
+  background-color: white;
+  color: #065B83;
 }
 
 .button:hover{
@@ -82,3 +78,58 @@ margin: 0 auto;
 
 
 
+
+
+
+body {
+  background-color: #181818;
+  color: #FFFFFF;
+}
+
+.jumbotron {
+  background-color: #282828;
+}
+
+.card {
+  background-color: #282828;
+}
+
+.card-header {
+  background-color: #383838;
+}
+
+.modal-content {
+  background-color: #282828;
+}
+
+.modal-header {
+  border-bottom: 1px solid #383838;
+}
+
+.modal-footer {
+  border-top: 1px solid #383838;
+}
+
+.form-control {
+  background-color: #383838;
+  color: #FFFFFF;
+  border: 1px solid #484848;
+}
+
+.form-control:focus {
+  border-color: #585858;
+  box-shadow: none;
+}
+
+.btn-primary {
+  background-color: #b92d2b;
+  border-color: #a92726;
+}
+
+.card-body {
+  color: #FFFFFF;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+}

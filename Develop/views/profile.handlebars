@@ -1,12 +1,14 @@
+<link rel="stylesheet" href="/css/style.css">
+
 <div class="container mt-5">
     <div class="jumbotron text-center">
         <h1 class="display-4">Welcome, {{name}}!</h1>
         <hr class="my-4">
-        <p>Update your details or add new workout below.</p>
+        <p>Update your details below</p>
     </div>
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="card">
                 <h5 class="card-header bg-primary text-white">Your Details</h5>
                 <div class="card-body">
@@ -153,7 +155,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        {{!-- <div class="col-md-6">
             <div class="card">
                 <h5 class="card-header bg-primary text-white">Current Workouts</h5>
                 <ul class="list-group list-group-flush">
@@ -166,18 +168,18 @@
                         Calories Burned: {{workout.caloriesBurned}}
                         <button class="btn btn-danger delete-workout-btn" data-id="{{workout.id}}">Delete</button>
                     </li> --}}
-                    <div class="card-body">
-                    {{!-- <p>Age: {{age}}</p> --}}
-                    <p>user_id: {{user_id}}</p>
+                    {{!-- <div class="card-body"> 
+                    !-- <p>Age: {{age}}</p> 
+                    !-- <p>user_id: {{user_id}}</p>
                     <p>Current Weight: {{weight}}</p>
                     <p>Height: {{height}}</p>
                     <p>bmi: {{bmi}}</p>
                     <p>Goal Weight: {{goal_weight}}</p>
                     <p>activity_level: {{activity_level}}</p>
                     <p>dietary_preference: {{dietary_preference}}</p>
-                    <p>resting_heart_rate: {{resting_heart_rate}}</p>
+                    <p>resting_heart_rate: {{resting_heart_rate}}</p> --
                     {{!-- <p>sleep_data: {{sleep_data}}</p>
-                    <p>body_measurements: {{body_measurements}}</p> --}}
+                    <p>body_measurements: {{body_measurements}}</p> --
                     <p>updatedAt: {{updatedAt}}</p>
                 </div>
                     {{/each}}
@@ -257,5 +259,5 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div> --}}
     <script src="./js/profile.js"></script>
