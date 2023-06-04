@@ -1,0 +1,276 @@
+<link rel="stylesheet" href="/css/style.css">
+
+<div class="container mt-5">
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Welcome, {{name}}!</h1>
+        <hr class="my-4">
+    </div>
+
+{{!-- This is where the data charts will be displayed --}}
+<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+
+
+{{!-- This will load the top 6 popular workouts --}}
+<div class="container center-align" id="popular-trailers">
+      <h2 class="white-text texttrailer">Don't know to start? Check out these workouts!</h2>
+      <div id="workouts-container"></div>
+    </div>
+
+
+{{!-- This will load the user details --}}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <h5 class="card-header bg-primary text-white" data-bs-toggle="collapse" data-bs-target="#user-details" style="cursor: pointer;">Your Details</h5>
+                <div id="user-details" class="collapse show">
+                    <div class="card-body">
+                        <p>user_id: {{user_id}}</p>
+                        <p>Current Weight: {{weight}}</p>
+                        <p>Height: {{height}}</p>
+                        <p>bmi: {{bmi}}</p>
+                        <p>Goal Weight: {{goal_weight}}</p>
+                        <p>activity_level: {{activity_level}}</p>
+                        <p>dietary_preference: {{dietary_preference}}</p>
+                        <p>resting_heart_rate: {{resting_heart_rate}}</p>
+                        <p>updatedAt: {{updatedAt}}</p>
+                    </div>
+                                    <div class="card-footer">
+                    <!-- Button to Open the Update Details Modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateDetailsModal">
+                        Update Details
+                    </button>
+                </div>
+            </div>
+                </div>
+
+
+            <div class="modal fade" id="updateDetailsModal" tabindex="-1" role="dialog"
+                aria-labelledby="updateDetailsModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="updateDetailsModalLabel">Update Your Details</h5>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="user-update-form" class="update-user-details-form">
+                                <input type="hidden" id="user-id" name="user_id" value="{{user_id}}" />
+                                <!-- Weight Field -->
+                                <div class="form-group">
+                                    <label for="user-weight">Weight:</label>
+                                    <input class="form-control" type="number" id="user-weight" name="weight"
+                                        value="{{weight}}" />
+                                </div>
+                                <!-- Height Field -->
+                                <div class="form-group">
+                                    <label for="user-height">Height:</label>
+                                    <select class="form-control" id="user-height" name="height">
+                                        <option value="46">3ft 10in</option>
+                                        <option value="47">3ft 11in</option>
+                                        <option value="48">4ft</option>
+                                        <option value="49">4ft 1in</option>
+                                        <option value="50">4ft 2in</option>
+                                        <option value="51">4ft 3in</option>
+                                        <option value="52">4ft 4in</option>
+                                        <option value="53">4ft 5in</option>
+                                        <option value="54">4ft 6in</option>
+                                        <option value="55">4ft 7in</option>
+                                        <option value="56">4ft 8in</option>
+                                        <option value="57">4ft 9in</option>
+                                        <option value="58">4ft 10in</option>
+                                        <option value="59">4ft 11in</option>
+                                        <option value="60">5ft</option>
+                                        <option value="61">5ft 1in</option>
+                                        <option value="62">5ft 2in</option>
+                                        <option value="63">5ft 3in</option>
+                                        <option value="64">5ft 4in</option>
+                                        <option value="65">5ft 5in</option>
+                                        <option value="66">5ft 6in</option>
+                                        <option value="67">5ft 7in</option>
+                                        <option value="68">5ft 8in</option>
+                                        <option value="69">5ft 9in</option>
+                                        <option value="70">5ft 10in</option>
+                                        <option value="71">5ft 11in</option>
+                                        <option value="72">6ft</option>
+                                        <option value="73">6ft 1in</option>
+                                        <option value="74">6ft 2in</option>
+                                        <option value="75">6ft 3in</option>
+                                        <option value="76">6ft 4in</option>
+                                        <option value="77">6ft 5in</option>
+                                        <option value="78">6ft 6in</option>
+                                        <option value="79">6ft 7in</option>
+                                        <option value="80">6ft 8in</option>
+                                        <option value="81">6ft 9in</option>
+                                        <option value="82">6ft 10in</option>
+                                        <option value="83">6ft 11in</option>
+                                        <option value="84">7ft</option>
+                                        <option value="85">7ft 1in</option>
+                                        <option value="86">7ft 2in</option>
+                                        <option value="87">7ft 3in</option>
+                                        <option value="88">7ft 4in</option>
+                                        <option value="89">7ft 5in</option>
+                                        <option value="90">7ft 6in</option>
+                                        <option value="91">7ft 7in</option>
+                                        <option value="92">7ft 8in</option>
+                                    </select>
+                                </div>
+                                <!-- Goal Weight Field -->
+                                <div class="form-group">
+                                    <label for="user-goal-weight">Goal Weight:</label>
+                                    <input class="form-control" type="number" id="user-goal-weight" name="goal_weight"
+                                        value="{{goal_weight}}" />
+                                </div>
+                                <!-- Activity Level Field -->
+                                <div class="form-group">
+                                    <label for="user-activity-level">Activity Level:</label>
+                                    <select class="form-control" id="user-activity-level" name="activity_level">
+                                        <option value="low">Low</option>
+                                        <option value="moderate">Moderate</option>
+                                        <option value="high">High</option>
+                                    </select>
+                                </div>
+                                <!-- Fitness Goal Field -->
+                                <div class="form-group">
+                                    <label for="user-fitness-goal">Fitness Goal:</label>
+                                    <input class="form-control" type="text" id="user-fitness-goal" name="fitness_goal"
+                                        value="{{fitness_goal}}" />
+                                </div>
+                                <!-- Dietary Preference Field -->
+                                <div class="form-group">
+                                    <label for="user-dietary-preference">Dietary Preference:</label>
+                                    <input class="form-control" type="text" id="user-dietary-preference"
+                                        name="dietary_preference" value="{{dietary_preference}}" />
+                                </div>
+                                <!-- Resting Heart Rate Field -->
+                                <div class="form-group">
+                                    <label for="user-resting-heart-rate">Resting Heart Rate:</label>
+                                    <input class="form-control" type="number" id="user-resting-heart-rate"
+                                        name="resting_heart_rate" value="{{resting_heart_rate}}" />
+                                </div>
+                                <!-- Blood Pressure Field -->
+                                <div class="form-group">
+                                    <label for="user-blood-pressure">Blood Pressure:</label>
+                                    <input class="form-control" type="text" id="user-blood-pressure"
+                                        name="blood_pressure" value="{{blood_pressure}}" />
+                                </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <h5 class="card-header bg-primary text-white">Current Workouts</h5>
+                <ul class="list-group list-group-flush">
+                    {{#if workouts.length}}
+                    {{#each workouts as |workout|}}
+                    !-- <li class="workoutText">
+                        <a class="workouts" href="/workout/{{workout.id}}">{{workout.type}}</a> -
+                        Duration: {{workout.duration}} minutes -
+                        Intensity: {{workout.intensity}} -
+                        Calories Burned: {{workout.caloriesBurned}}
+                        <button class="btn btn-danger delete-workout-btn" data-id="{{workout.id}}">Delete</button>
+                    </li> 
+                    !-- <div class="card-body"> 
+                    !-- <p>Age: {{age}}</p> 
+                    !-- <p>user_id: {{user_id}}</p>
+                    <p>Current Weight: {{weight}}</p>
+                    <p>Height: {{height}}</p>
+                    <p>bmi: {{bmi}}</p>
+                    <p>Goal Weight: {{goal_weight}}</p>
+                    <p>activity_level: {{activity_level}}</p>
+                    <p>dietary_preference: {{dietary_preference}}</p>
+                    <p>resting_heart_rate: {{resting_heart_rate}}</p> --
+                    !-- <p>sleep_data: {{sleep_data}}</p>
+                    <p>body_measurements: {{body_measurements}}</p> --
+                    <p>updatedAt: {{updatedAt}}</p>
+                </div>
+                    {{/each}}
+                    {{else}}
+                    <li class="list-group-item">No workouts added yet!</li>
+                    {{/if}}
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card mt-4">
+        <h5 class="card-header bg-primary text-white">Create a New Workout</h5>
+        <div class="card-body">
+            <form class="new-workout-form">
+                <div class="form-group">
+                    <label for="workout-type">Workout Type:</label>
+                    <select class="form-control" id="workout-type" name="type">
+                        <option value="Strength">Strength</option>
+                        <option value="Cardio">Cardio</option>
+                        <option value="Yoga">Yoga</option>
+                        <option value="Active Rest">Active Rest</option>
+                        <option value="High Intensity">High Intensity</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="workout-description">Description:</label>
+                    <input class="form-control" type="text" id="workout-description" name="description" />
+                </div>
+                <div class="form-group">
+                    <label for="workout-duration">Duration (minutes):</label>
+                    <input class="form-control" type="number" id="workout-duration" name="duration" />
+                </div>
+                <div class="form-group">
+                    <label for="workout-distance">Distance:</label>
+                    <input class="form-control" type="number" id="workout-distance" name="distance" />
+                </div>
+                <div class="form-group">
+                    <label for="workout-sets">Sets:</label>
+                    <input class="form-control" type="number" id="workout-sets" name="sets" />
+                </div>
+                <div class="form-group">
+                    <label for="workout-reps">Reps:</label>
+                    <input class="form-control" type="number" id="workout-reps" name="reps" />
+                </div>
+                <div class="form-group">
+                    <label for="workout-weight">Weight:</label>
+                    <input class="form-control" type="number" id="workout-weight" name="weight" />
+                </div>
+                <div class="form-group">
+                    <label for="workout-intensity">Intensity:</label>
+                    <select class="form-control" id="workout-intensity" name="intensity" />
+                    <option value="low">Low</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="high">High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="workout-heart-rate">Heart Rate:</label>
+                    <input class="form-control" type="number" id="workout-heart-rate" name="heart_rate" />
+                </div>
+                <div class="form-group">
+                    <label for="workout-calories">Calories Burned:</label>
+                    <input class="form-control" type="number" id="workout-calories" name="caloriesBurned" />
+                </div>
+                <div class="form-group">
+                    <label for="workout-rating">Rating:</label>
+                    <input class="form-control" type="number" id="workout-rating" name="rating" />
+                </div>
+                <div class="form-group">
+                    <label for="workout-notes">Notes:</label>
+                    <textarea class="form-control" id="workout-notes" name="notes"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="./js/profile.js"></script>
