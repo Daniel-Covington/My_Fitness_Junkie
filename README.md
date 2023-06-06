@@ -25,12 +25,21 @@ This is a fitness tracker that allows the user to create and track daily workout
 ## Installation
 To install necessary dependencies, run the following command:
 
+* Create .env file
+DB_NAME='Gym_Rat_db'
+DB_PASSWORD=''
+DB_USER='root'
+
 * npm i
 * npm i axios
 * npm i moment
+* npm i sequelize
+* login to sql and source schema from db directory
+* npm run seed
+* npm run start
 
 ## Usage
-![alt text](./Develop/readmeimg.png) 
+![alt text](./readmeimg.png) 
 <!-- this is where the screenshot of the image will be at -->
 
 ## Contributing
