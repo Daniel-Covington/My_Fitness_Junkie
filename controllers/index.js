@@ -10,6 +10,6 @@ router.use("/", homeRoutes);
 router.use("/api/users", userRoutes);
 router.use("/api/workouts", workoutRoutes);
 router.use("/profile", profileRoutes);
-router.use("/api/youtubeRoutes", youtubeRoutes);
+router.use("/api/youtubeRoutes", youtubeRoutes); 
 
 module.exports = router;
