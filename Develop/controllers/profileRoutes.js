@@ -2,6 +2,17 @@ const router = require("express").Router();
 const { User, UserDetail } = require("../models");
 const withAuth = require("../utils/auth");
 
+
+router.get("/workouts", async (req, res) => {
+  try {
+    const workoutData = await loadTopWorkouts();
+    res.json(workoutData);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
+});
+
 router.get("/", withAuth, async (req, res) => {
   try {
     const userDetailsData = await UserDetail.findOne({
@@ -65,5 +76,6 @@ router.put("/update/:id", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 module.exports = router;
