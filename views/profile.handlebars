@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
-<body class="body profile-page">
+<body data-user-id="{{user_id}}" class="body profile-page">
 
-<div class="container mt-5 profile-page">
+<div class="container mt-5">
     <div class="jumbotron text-center">
         <h1 class="display-4 text-danger text-lg">Welcome, {{name}}!</h1>
         <hr class="my-4">
@@ -24,9 +24,9 @@
       </div>
       <canvas id="myChart"></canvas>
     </div>
-    <div class="card-footer">
+    {{!-- <div class="card-footer">
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#weightUpdateModal">Update Weight</button>
-    </div>
+    </div> --}}
   </div>
 </div>
 <!-- Weight Update Modal -->
@@ -55,14 +55,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
 
 {{!-- This will load the top 3 popular workouts --}}
 <div class="container center-align">
