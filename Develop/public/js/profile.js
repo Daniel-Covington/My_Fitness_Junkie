@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   const updateUserDetails = async (event) => {
     event.preventDefault();
-
+  
     const weight = document.querySelector("#user-weight").value.trim();
     const height = document.querySelector("#user-height").value.trim();
     const goalWeight = document.querySelector("#user-goal-weight").value.trim();
@@ -24,8 +24,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const bloodPressure = document
       .querySelector("#user-blood-pressure")
       .value.trim();
-    // const bodyMeasurements = document.querySelector('#user-body-measurements').value.trim();    
-
+  
     if (
       weight &&
       height &&
@@ -37,8 +36,27 @@ document.addEventListener("DOMContentLoaded", (event) => {
       bloodPressure
     ) {
       const userId = document.querySelector("#user-id").value.trim();
-
-      const response = await fetch(`/profile/update/${userId}`, {
+  
+      // Create a weight history record
+      const weightUpdateResponse = await fetch("/profile/weighthistory", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user_id: userId,
+          weight: weight,
+          date: new Date().toISOString().split("T")[0], // Get the current date in YYYY-MM-DD format
+        }),
+      });
+  
+      if (!weightUpdateResponse.ok) {
+        alert("Failed to update weight history");
+        return;
+      }
+  
+      // Update the user details
+      const userDetailsResponse = await fetch(`/profile/update/${userId}`, {
         method: "PUT",
         body: JSON.stringify({
           weight,
@@ -54,8 +72,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
           "Content-Type": "application/json",
         },
       });
-
-      if (response.ok) {
+  
+      if (userDetailsResponse.ok) {
         // Close the modal and refresh the page
         const updateDetailsModal = bootstrap.Modal.getInstance(
           document.getElementById("updateDetailsModal")

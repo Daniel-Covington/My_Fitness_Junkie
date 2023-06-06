@@ -30,16 +30,46 @@ const signupFormHandler = async (event) => {
   const password = document.querySelector('#password-signup').value.trim();
 
   if (name && email && password) {
-    const response = await fetch('/api/users', {
-      method: 'POST',
-      body: JSON.stringify({ name, email, password }),
-      headers: { 'Content-Type': 'application/json' },
-    });
+    try {
+      const response = await fetch('/api/users', {
+        method: 'POST',
+        body: JSON.stringify({ name, email, password }),
+        headers: { 'Content-Type': 'application/json' },
+      });
 
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert(response.statusText);
+      if (response.ok) {
+        const userData = await response.json();
+        const userId = userData.id;
+
+        // Create a record in the UserDetail table
+        await fetch(`/api/users/update/${userId}`, {
+          method: 'PUT',
+          body: JSON.stringify({
+            user_id: userId,
+            weight: 0,
+            height: 0,
+            bmi: 0,
+            goal_weight: 0,
+            activity_level: '',
+            fitness_goal: '',
+            dietary_preference: '',
+            resting_heart_rate: 0,
+            blood_pressure: '',
+            sleep_data: null,
+            body_measurements: null,
+          }),
+          headers: { 'Content-Type': 'application/json' },
+        });
+
+        document.location.replace('/profile');
+      } else {
+        const data = await response.json();
+        throw new Error(data.message);
+      }
+    } catch (error) {
+      console.log(error);
+      // Display an error message to the user
+      // For example, update the DOM with the error message
     }
   }
 };

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, UserDetail } = require("../../models");
 const axios = require("axios").default;
 
 router.post("/", async (req, res) => {
@@ -60,18 +60,48 @@ router.post("/logout", (req, res) => {
 
 router.put("/update/:id", async (req, res) => {
   try {
-    const userData = await User.update(req.body, {
-      where: {
-        id: req.params.id,
-      },
-    });
+    const { id } = req.params;
+    const { weight, height, goalWeight, activityLevel, fitnessGoal, dietaryPreference, restingHeartRate, bloodPressure } = req.body;
 
-    if (!userData[0]) {
-      res.status(404).json({ message: "No user found with this id!" });
+    const existingUserDetail = await UserDetail.findOne({ where: { user_id: id } });
+
+    if (!existingUserDetail) {
+      // Create a new UserDetail record for the user
+      const newUserDetail = await UserDetail.create({
+        id: id,
+        user_id: id,
+        weight: parseFloat(weight),
+        height: parseFloat(height),
+        goal_weight: parseFloat(goalWeight),
+        activity_level: activityLevel,
+        fitness_goal: fitnessGoal,
+        dietary_preference: dietaryPreference,
+        resting_heart_rate: parseInt(restingHeartRate),
+        blood_pressure: bloodPressure
+      });
+
+      res.status(201).json({ message: "User detail created successfully!" });
       return;
     }
 
-    res.status(200).json({ message: "User details updated successfully!" });
+    // Update the existing UserDetail record
+    const updatedUserDetail = await UserDetail.update(
+      {
+        weight: parseFloat(weight),
+        height: parseFloat(height),
+        goal_weight: parseFloat(goalWeight),
+        activity_level: activityLevel,
+        fitness_goal: fitnessGoal,
+        dietary_preference: dietaryPreference,
+        resting_heart_rate: parseInt(restingHeartRate),
+        blood_pressure: bloodPressure
+      },
+      {
+        where: { user_id: id }
+      }
+    );
+
+    res.status(200).json({ message: "User detail updated successfully!" });
   } catch (err) {
     res.status(500).json(err);
   }
