@@ -5,8 +5,8 @@ async function loadTopWorkouts() {
   const youtubeUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=03&type=video&q=gym%20workouts&order=viewCount&videoDefinition=high&publishedAfter=2022-01-01T00:00:00Z&key=${YouTubeapiKey}`;
   console.log("hello from loadTopWorkouts");
   try {
-    const youtubeResponse = await axios.get(youtubeUrl);
-    const youtubeData = youtubeResponse.data;
+    const youtubeResponse = await fetch(youtubeUrl);
+    const youtubeData = await youtubeResponse.json();
     // displays the top 3 workout videos
     displayPopularWorkout(youtubeData.items);
 
@@ -21,14 +21,14 @@ function displayPopularWorkout(workouts) {
     let workoutsThumbnails = "";
   
     workouts.forEach((workout) => {
-      trailerThumbnails += `
+      workoutsThumbnails += `
         <div style="display: inline-block; margin: 20px;">
-          <a href="https://www.youtube.com/watch?v=${trailer.id.videoId}" target="_blank">
-            <img class="trailer-thumbnail" src="${trailer.snippet.thumbnails.medium.url}" alt="${trailer.snippet.title}">
+          <a href="https://www.youtube.com/watch?v=${workout.id.videoId}" target="_blank">
+            <img class="trailer-thumbnail" src="${workout.snippet.thumbnails.medium.url}" alt="${workout.snippet.title}">
           </a>
         </div>
       `;
     });
   
-    trailersContainer.innerHTML = trailerThumbnails;
+    workoutContainer.innerHTML = workoutsThumbnails;
     }
