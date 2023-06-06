@@ -2,7 +2,7 @@
 
 <div class="container mt-5">
     <div class="jumbotron text-center">
-        <h1 class="display-4">Welcome, {{name}}!</h1>
+        <h1 class="display-4 text-danger text-lg">Welcome, {{name}}!</h1>
         <hr class="my-4">
     </div>
 
@@ -10,7 +10,7 @@
 
 {{!-- This will load the top 6 popular workouts --}}
 <div class="container center-align" id="popular-trailers">
-      <h2 class="white-text texttrailer">Don't know to start? Check out these workouts!</h2>
+      <h2 class="text-danger text-lg texttrailer">Don't know where to begin? Check out these workouts!</h2>
       <div id="workouts-container"></div>
     </div>
 
@@ -19,13 +19,13 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <h5 class="card-header bg-primary text-white" data-bs-toggle="collapse" data-bs-target="#user-details" style="cursor: pointer;">Your Details</h5>
+                <h5 class="card-header bg-gray text-danger" data-bs-toggle="collapse" data-bs-target="#user-details" style="cursor: pointer;">Your Details</h5>
                 <div id="user-details" class="collapse show">
                     <div class="card-body">
                         {{!-- <p>user_id: {{user_id}}</p> --}}
                         <p>Current Weight: {{weight}}</p>
                         <p>Height: {{height}}</p>
-                        <p>bmi: {{bmi}}</p>
+                        <p>BMI: {{bmi}}</p>
                         <p>Goal Weight: {{goal_weight}}</p>
                         <p>activity level: {{activity_level}}</p>
                         {{!-- <p>dietary_preference: {{dietary_preference}}</p> --}}
@@ -165,7 +165,7 @@
         </div>
 <div class="col-md-12">
     <div class="card">
-        <h5 class="card-header bg-primary text-white">Current Workouts</h5>
+        <h5 class="card-header bg-grey text-danger">Current Workouts</h5>
         <div class="row">
             {{#if workouts.length}}
             {{#each workouts as |workout|}}
@@ -198,7 +198,7 @@
     </div>
 
     <div class="card mt-4">
-        <h5 class="card-header bg-primary text-white">Create a New Workout</h5>
+        <h5 class="card-header bg-grey text-danger">Create a New Workout</h5>
         <div class="card-body">
             <form class="new-workout-form">
                 <div class="form-group">
