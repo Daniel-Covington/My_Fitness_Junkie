@@ -3,8 +3,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #181818;
-  color: #FFFFFF;
-  font-family: 'Oswald', sans-serif;
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
 }
 
 .profile-page {
@@ -29,16 +29,16 @@ body {
   border-color: #383838;
 }
 
-#logout{
+#logout {
   background-color: #6667ab;
   padding: 10px;
   font-family: Oswald;
   border-radius: 15px;
   transition-duration: 0.4s;
-  color: white
+  color: white;
 }
 
-.btn-profile{
+.btn-profile {
   background-color: #6667ab;
   padding: 10px;
   font-family: Oswald;
@@ -48,7 +48,7 @@ body {
   border-color: #383838;
 }
 
-.btn-profile:hover{
+.btn-profile:hover {
   background-color: white;
   color: #6667ab;
   border-color: #6667ab;
@@ -127,7 +127,8 @@ body {
   font-weight: bold;
 }
 
-#login, #signup {
+#login,
+#signup {
   color: #a92726;
   font-family: Oswald;
   font-weight: bold;
@@ -146,7 +147,10 @@ body {
   color: whitesmoke;
 }
 
-.jumbotron, .card, .card-header, .modal-content {
+.jumbotron,
+.card,
+.card-header,
+.modal-content {
   background-color: rgba(40, 40, 40, 0.8);
 }
 
@@ -175,20 +179,19 @@ body {
 }
 
 .card-body {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
-
-#email-login, 
-#password-login, 
-#name-signup, 
-#email-signup, 
+#email-login,
+#password-login,
+#name-signup,
+#email-signup,
 #password-signup {
   width: 70%;
   margin-left: auto;
   margin-right: auto;
   display: block;
-  background-color: rgba(56, 56, 56, 0.5); 
+  background-color: rgba(56, 56, 56, 0.5);
 }
 
 .login-form .form-group button,
@@ -213,5 +216,43 @@ body {
 #welcome,
 #AboutUs {
   text-align: center;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
+}
+
+.card-containers {
+  width: 1000px;
+}
+
+.warmup{
+  text-align: center;
+  font-size: 20px;
+}
+
+#image1 {
+  background-image: url("./dynamic-vs-static-wfqlbhlgzout.jpg");
+  background-size: cover;
+  background-position: center;
+
+  object-position: center;
+}
+
+#image2 {
+  background-image: url("dynamicstretching-treinioblog-v01-1024x1024-wfiwbarisrwg.jpg");
+  background-size: cover;
+  background-position: center;
+
+  object-position: center;
+}
+
+#image3 {
+  background-image: url("./static-wfuzqlmzcrxa.jpg");
+  background-size: cover;
+  background-position: center;
+
+  object-position: center;
+}
+.image-cover {
+  object-fit: cover;
+  width: 95%;
+  height: 25vw;
 }
