@@ -1,10 +1,10 @@
 const router = require("express").Router();
 
-const userRoutes = require("./api/userroutes");
-const workoutRoutes = require("./api/workoutroutes");
-const homeRoutes = require("./homeroutes");
-const profileRoutes = require("./profileroutes");
-const youtubeRoutes = require("./api/youtuberoutes");
+const userRoutes = require("./api/userRoutes");
+const workoutRoutes = require("./api/workoutRoutes");
+const homeRoutes = require("./homeRoutes");
+const profileRoutes = require("./profileRoutes");
+const youtubeRoutes = require("./api/youtubeRoutes");
 
 router.use("/", homeRoutes);
 router.use("/api/users", userRoutes);
