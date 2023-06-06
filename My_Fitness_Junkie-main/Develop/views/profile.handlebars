@@ -1,5 +1,23 @@
 <link rel="stylesheet" href="/css/style.css">
 
+{{!-- Weight Chart --}}
+<div class="container mt-5">
+      <div class="card">
+           <h5 class="card-header bg-primary text-white">Weight Chart</h5>
+        <div class="card-body">
+          <div class="chart-options mb-4">
+            <div class="btn-group" role="group" aria-label="Chart Options">
+              <button type="button" class="btn btn-outline-primary active" data-range="week">1 Week</button>
+              <button type="button" class="btn btn-outline-primary" data-range="month">1 Month</button>
+              <button type="button" class="btn btn-outline-primary" data-range="threeMonths">3 Months</button>
+              <button type="button" class="btn btn-outline-primary" data-range="year">1 Year</button>
+            </div>
+          </div>
+          <canvas id="lineChart"></canvas>
+        </div>
+      </div>
+    </div>
+
 <div class="container mt-5">
     <div class="jumbotron text-center">
         <h1 class="display-4">Welcome, {{name}}!</h1>
@@ -274,3 +292,4 @@
 
 
     <script src="./js/profile.js"></script>
+    <script src="./js/chart.js"></script>
