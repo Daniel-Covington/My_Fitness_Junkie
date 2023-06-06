@@ -101,3 +101,4 @@ document.addEventListener('DOMContentLoaded', async (event) => {
 
     getChartData('week');
 });
+//hello world
