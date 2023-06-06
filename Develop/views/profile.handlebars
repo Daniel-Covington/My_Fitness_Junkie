@@ -8,8 +8,6 @@
 
 {{!-- This is where the data charts will be displayed --}}
 
-
-
 {{!-- This will load the top 6 popular workouts --}}
 <div class="container center-align" id="popular-trailers">
       <h2 class="white-text texttrailer">Don't know to start? Check out these workouts!</h2>
@@ -24,15 +22,15 @@
                 <h5 class="card-header bg-primary text-white" data-bs-toggle="collapse" data-bs-target="#user-details" style="cursor: pointer;">Your Details</h5>
                 <div id="user-details" class="collapse show">
                     <div class="card-body">
-                        <p>user_id: {{user_id}}</p>
+                        {{!-- <p>user_id: {{user_id}}</p> --}}
                         <p>Current Weight: {{weight}}</p>
                         <p>Height: {{height}}</p>
                         <p>bmi: {{bmi}}</p>
                         <p>Goal Weight: {{goal_weight}}</p>
-                        <p>activity_level: {{activity_level}}</p>
-                        <p>dietary_preference: {{dietary_preference}}</p>
-                        <p>resting_heart_rate: {{resting_heart_rate}}</p>
-                        <p>updatedAt: {{updatedAt}}</p>
+                        <p>activity level: {{activity_level}}</p>
+                        {{!-- <p>dietary_preference: {{dietary_preference}}</p> --}}
+                        <p>resting heart rate: {{resting_heart_rate}}</p>
+                        <p>Last Updated: {{updatedAt}}</p>
                     </div>
                                     <div class="card-footer">
                     <!-- Button to Open the Update Details Modal -->
@@ -42,7 +40,6 @@
                 </div>
             </div>
                 </div>
-
 
             <div class="modal fade" id="updateDetailsModal" tabindex="-1" role="dialog"
                 aria-labelledby="updateDetailsModalLabel" aria-hidden="true">
@@ -166,40 +163,37 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="card">
-                <h5 class="card-header bg-primary text-white">Current Workouts</h5>
-                <ul class="list-group list-group-flush">
-                    {{#if workouts.length}}
-                    {{#each workouts as |workout|}}
-                    !-- <li class="workoutText">
-                        <a class="workouts" href="/workout/{{workout.id}}">{{workout.type}}</a> -
-                        Duration: {{workout.duration}} minutes -
-                        Intensity: {{workout.intensity}} -
-                        Calories Burned: {{workout.caloriesBurned}}
+<div class="col-md-12">
+    <div class="card">
+        <h5 class="card-header bg-primary text-white">Current Workouts</h5>
+        <div class="row">
+            {{#if workouts.length}}
+            {{#each workouts as |workout|}}
+            <div class="col-md-6 mt-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h7 class="card-title">
+                            <a class="workouts" href="/workout/{{workout.id}}">{{workout.type}}</a>
+                        </h7>
+                        <p class="card-text">Description: {{workout.description}} minutes</p>
+                        <p class="card-text">Duration: {{workout.duration}} minutes</p>
+                        <p class="card-text">Intensity: {{workout.intensity}}</p>
+                        <p class="card-text">Calories Burned: {{workout.caloriesBurned}}</p>
+                    </div>
+                    <div class="card-footer text-right">
                         <button class="btn btn-danger delete-workout-btn" data-id="{{workout.id}}">Delete</button>
-                    </li> 
-                    !-- <div class="card-body"> 
-                    !-- <p>Age: {{age}}</p> 
-                    !-- <p>user_id: {{user_id}}</p>
-                    <p>Current Weight: {{weight}}</p>
-                    <p>Height: {{height}}</p>
-                    <p>bmi: {{bmi}}</p>
-                    <p>Goal Weight: {{goal_weight}}</p>
-                    <p>activity_level: {{activity_level}}</p>
-                    <p>dietary_preference: {{dietary_preference}}</p>
-                    <p>resting_heart_rate: {{resting_heart_rate}}</p> --
-                    !-- <p>sleep_data: {{sleep_data}}</p>
-                    <p>body_measurements: {{body_measurements}}</p> --
-                    <p>updatedAt: {{updatedAt}}</p>
+                    </div>
                 </div>
-                    {{/each}}
-                    {{else}}
-                    <li class="list-group-item">No workouts added yet!</li>
-                    {{/if}}
-                </ul>
             </div>
+            {{/each}}
+            {{else}}
+            <div class="col-md-12">
+                <div class="list-group-item">No workouts added yet!</div>
+            </div>
+            {{/if}}
         </div>
+    </div>
+</div>
 
     </div>
 
@@ -272,5 +266,5 @@
         </div>
     </div>
 
-
+    
     <script src="./js/profile.js"></script>
