@@ -7,6 +7,12 @@ body {
   font-family: 'Oswald', sans-serif;
 }
 
+.profile-page {
+  background-image: url("./nikerun.jpg") !important;
+  background-size: contain;
+  background-repeat: repeat;
+}
+
 #copytag {
   font-family: Oswald;
   text-align: center;
