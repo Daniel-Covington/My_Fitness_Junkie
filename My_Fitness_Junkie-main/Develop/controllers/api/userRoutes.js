@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 const axios = require("axios").default;
+const heartbeatData = require("../../seeds/heartRate.json");
 
 router.post("/", async (req, res) => {
   try {
@@ -76,5 +77,13 @@ router.put("/update/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+// route //
+router.get("/heartbeatData", (req, res) => {
+  res.json(heartbeatData);
+});
+
+
 
 module.exports = router;

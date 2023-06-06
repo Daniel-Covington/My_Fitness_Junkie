@@ -18,6 +18,24 @@
       </div>
     </div>
 
+    {{!-- Heart Rate Chart --}}
+<div class="container mt-5">
+      <div class="card">
+           <h5 class="card-header bg-primary text-white">HeartBeat Chart</h5>
+        <div class="card-body">
+          <div class="chart-options mb-4">
+            <div class="btn-group" role="group" aria-label="Chart Options">
+              <button type="button" class="btn btn-outline-primary active" data-range="week">1 Week</button>
+              <button type="button" class="btn btn-outline-primary" data-range="month">1 Month</button>
+              <button type="button" class="btn btn-outline-primary" data-range="threeMonths">3 Months</button>
+              <button type="button" class="btn btn-outline-primary" data-range="year">1 Year</button>
+            </div>
+          </div>
+          <div id="chartContainer"></div>
+        </div>
+      </div>
+    </div>
+
 <div class="container mt-5">
     <div class="jumbotron text-center">
         <h1 class="display-4">Welcome, {{name}}!</h1>
@@ -293,3 +311,5 @@
 
     <script src="./js/profile.js"></script>
     <script src="./js/chart.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
