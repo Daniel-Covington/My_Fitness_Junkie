@@ -11,11 +11,11 @@
 
 {{!-- This is where the data charts will be displayed --}}
 
-{{!-- This will load the top 6 popular workouts --}}
-<div class="container center-align" id="popular-trailers">
+{{!-- This will load the top 3 popular workouts --}}
+{{!-- <div class="container center-align" id="popular-trailers">
       <h2 class="text-danger text-lg texttrailer">Don't know where to begin? Check out these workouts!</h2>
       <div id="workouts-container"></div>
-    </div>
+    </div> --}}
 
 
 {{!-- This will load the user details --}}
@@ -268,6 +268,51 @@
             </form>
         </div>
     </div>
+
 </body>
+
+{{!-- This is where the pictures will go for the streches--}}
+    
+    <div class="container mt-5 mb-3">
+        <p class="warmup">Fun Fact: Most injuries occur from the lack of proper warmup!</p>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="card p-3 mb-2 image-cover"  id="image1">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-row align-items-center">
+                            <div class="icon"> <i class="bx bxl-mailchimp"></i> </div>
+                            <div class="ms-2 c-details"></div>
+                        </div>
+                    </div>
+                    <div class="mt-5"> </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="card p-3 mb-2 image-cover" id="image2">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-row align-items-center">
+                            <div class="icon"> <i class="bx bxl-dribbble"></i> </div>
+                            <div class="ms-2 c-details"> </div>
+                        </div>
+                    </div>
+                    <div class="mt-5"> </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-3 mb-2 image-cover" id="image3">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-row align-items-center">
+                            <div class="icon"> <i class="bx bxl-reddit"></i> </div>
+                            <div class="ms-2 c-details"></div>
+                        </div>
+                    </div>
+                    <div class="mt-5" ></div>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <script src="./js/profile.js"></script>
