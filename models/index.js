@@ -1,7 +1,7 @@
-const User = require('./user');
+const User = require('./User');
 const Workout = require('./workout');
-const UserDetail = require('./userdetail');
-const WeightHistory = require('./weighthistory');  
+const UserDetail = require('./UserDetail');
+const WeightHistory = require('./WeightHistory');  
 
 User.hasMany(Workout, {
   foreignKey: 'user_id',
