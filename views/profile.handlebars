@@ -10,20 +10,22 @@
     </div>
 
 {{!-- This is where the data charts will be displayed --}}
-<div class="container mt-5">
-  <div class="card">
-    <h5 class="card-header bg-primary text-white">Weight Chart</h5>
-    <div class="card-body">
+<div class="container containerSpace mt-5">
+ <div class="card containerSpace">
+                <h5 class="card-header bg-gray text-danger" data-bs-toggle="collapse" data-bs-target="#user-chart" style="cursor: pointer;">Weight Progress</h5>
+                <div id="user-chart" class="collapse show">
+                    <div class="card-body">
       <div class="chart-options mb-4">
         <div class="btn-group" role="group" aria-label="Chart Options">
-          <button type="button" class="btn btn-outline-primary active" data-range="week">1 Week</button>
-          <button type="button" class="btn btn-outline-primary" data-range="month">1 Month</button>
-          <button type="button" class="btn btn-outline-primary" data-range="threeMonths">3 Months</button>
-          <button type="button" class="btn btn-outline-primary" data-range="year">1 Year</button>
+          <button type="button" class="btnTime btn-outline-primary active" data-range="week">1 Week</button>
+          <button type="button" class="btnTime btn-outline-primary" data-range="month">1 Month</button>
+          <button type="button" class="btnTime btn-outline-primary" data-range="threeMonths">3 Months</button>
+          <button type="button" class="btnTime btn-outline-primary" data-range="year">1 Year</button>
         </div>
       </div>
       <canvas id="myChart"></canvas>
     </div>
+                </div>
     {{!-- <div class="card-footer">
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#weightUpdateModal">Update Weight</button>
     </div> --}}
@@ -57,16 +59,24 @@
 </div>
 
 {{!-- This will load the top 3 popular workouts --}}
-<div class="container center-align">
-      <h2 class="text-danger text-lg texttrailer">Don't know where to begin? Check out these workouts!</h2>
+ {{!-- <div class="card containerSpace"> --}}
+<div class="container card containerSpace center-align">
+      {{!-- <h2 class="card-header bg-gray text-danger text-lg texttrailer">Don't know where to begin? Check out these workouts!</h2> --}}
+
+    <h5 class="card-header bg-gray text-danger text-lg texttrailer" data-bs-toggle="collapse" data-bs-target="#videos" style="cursor: pointer;">Don't Know Where To Begin? Checkout These Workouts!</h5>
+                <div id="videos" class="collapse show">
+                    <div class="card-body">
+
       <div id="workouts-container"></div>
+    </div>
+                </div>
     </div>
 
 
 {{!-- This will load the user details --}}
     <div class="row">
         <div class="col-md-12">
-            <div class="card">
+            <div class="card containerSpace">
                 <h5 class="card-header bg-gray text-danger" data-bs-toggle="collapse" data-bs-target="#user-details" style="cursor: pointer;">Your Details</h5>
                 <div id="user-details" class="collapse show">
                     <div class="card-body">
@@ -75,9 +85,9 @@
                         <p>Height: {{height}}</p>
                         <p>BMI: {{bmi}}</p>
                         <p>Goal Weight: {{goal_weight}}</p>
-                        <p>activity level: {{activity_level}}</p>
+                        <p>Activity Level: {{activity_level}}</p>
                         {{!-- <p>dietary_preference: {{dietary_preference}}</p> --}}
-                        <p>resting heart rate: {{resting_heart_rate}}</p>
+                        <p>Resting Heart Rate: {{resting_heart_rate}}</p>
                         <p>Last Updated: {{updatedAt}}</p>
                     </div>
                                     <div class="card-footer">
@@ -212,8 +222,14 @@
             </div>
         </div>
 <div class="col-md-12">
-    <div class="card">
-        <h5 class="card-header bg-grey text-danger">Current Workouts</h5>
+    {{!-- <div class="card">
+        <h5 class="card-header bg-grey text-danger">Current Workouts</h5> --}}
+
+             <div class="card containerSpace">
+                <h5 class="card-header bg-gray text-danger" data-bs-toggle="collapse" data-bs-target="#workouts" style="cursor: pointer;">Current Workouts</h5>
+                <div id="workouts" class="collapse show">
+                    <div class="card-body">
+
         <div class="row">
             {{#if workouts.length}}
             {{#each workouts as |workout|}}
@@ -232,7 +248,7 @@
                         <button class="btn btn-danger delete-workout-btn" data-id="{{workout.id}}">Delete</button>
                     </div>
                 </div>
-            </div>
+            
             {{/each}}
             {{else}}
             <div class="col-md-12">
@@ -240,14 +256,20 @@
             </div>
             {{/if}}
         </div>
+        </div>
     </div>
+</div>
 </div>
 
     </div>
 
-    <div class="card mt-4">
+    {{!-- <div class="card mt-4">
         <h5 class="card-header bg-grey text-danger">Create a New Workout</h5>
-        <div class="card-body">
+        <div class="card-body"> --}}
+            <div class="card containerSpace">
+                <h5 class="card-header bg-gray text-danger" data-bs-toggle="collapse" data-bs-target="#createWorkout" style="cursor: pointer;">Create A New Workout!</h5>
+                <div id="createWorkout" class="collapse show">
+                    <div class="card-body">
             <form class="new-workout-form">
                 <div class="form-group">
                     <label for="workout-type">Workout Type:</label>
@@ -311,6 +333,7 @@
                     <button type="submit" class="btn btn-primary">Create</button>
                 </div>
             </form>
+                    </div>
         </div>
     </div>
 
@@ -318,7 +341,7 @@
 
 {{!-- This is where the pictures will go for the streches--}}
     
-    <div class="container mt-5 mb-3">
+    <div class="container card card-header bg-gray text-danger mt-5 mb-3">
         <p class="warmup">Fun Fact: Most injuries occur from the lack of proper warmup!</p>
         <div class="row text-center">
             <div class="col-md-4">
