@@ -175,3 +175,7 @@ body {
   text-align: center;
   margin-bottom: 20px; 
 }
+
+.image1{
+background-image: url("./nike-run.jpg") !important;
+}

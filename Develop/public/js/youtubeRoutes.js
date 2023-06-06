@@ -1,22 +1,23 @@
-const axios = require("axios").default;
-
 
 // Load in top current workouts when page loads
 async function loadTopWorkouts() {
   //Alternative key : AIzaSyDI57Lr3xsoJK_Rgd2QzXIZkx0fm2k_vsg
-  const YouTubeapiKey = "AIzaSyDYbJRRhuu0m4CJmkTL6VegvwSbRiFtH5A";
-  const youtubeUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=03&type=video&q=official%20trailer&order=viewCount&videoDefinition=high&publishedAfter=2022-01-01T00:00:00Z&key=${YouTubeapiKey}`;
+  // Annalee Key: AIzaSyDYbJRRhuu0m4CJmkTL6VegvwSbRiFtH5A
+  const YouTubeapiKey = "AIzaSyDI57Lr3xsoJK_Rgd2QzXIZkx0fm2k_vsg";
+  const youtubeUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=03&type=video&q=gym%20workouts&order=viewCount&videoDefinition=high&publishedAfter=2022-01-01T00:00:00Z&key=${YouTubeapiKey}`;
+  console.log("hello from loadTopWorkouts");
 
   try {
     const youtubeResponse = await axios.get(youtubeUrl);
     const youtubeData = youtubeResponse.data;
-    // displays the top 6 workout videos
+    // displays the top 3 workout videos
     displayPopularWorkout(youtubeData.items);
 
   } catch (error) {
     console.error("Error fetching data:", error);
   }
 }
+loadTopWorkouts();
 
 // This will diplay the top 3 workouts on the page as thumbnails
 function displayPopularWorkout(loadTopWorkouts) {
@@ -36,7 +37,7 @@ function displayPopularWorkout(loadTopWorkouts) {
   workoutContainer.innerHTML = workoutThumbnails;
 }
 
-module.exports = axios;
+
 
 // try {
 //     const youtubeResponse = fetch(youtubeUrl);

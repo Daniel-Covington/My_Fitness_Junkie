@@ -3,6 +3,14 @@
 ## Description
 This is a fitness tracker that allows the user to create and track daily workouts. The user can log multiple exercises in a workout on a given day. The user can also track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, the user can track the distance traveled.
 
+# User Story
+* AS A fitness enthusiast​
+
+* I WANT keep a record of my fitness journey, track my progress over time, and calculate the calories burned during each workout based on the type, duration, and intensity of the workout so I can maintain my calorie intake and expenditure balance.​
+
+* SO THAT I see my progress towards my goal weight to stay motivated and committed to my fitness journey.​
+
+
 ## Table of Contents
 * [Installation](#installation)
 
@@ -22,7 +30,7 @@ To install necessary dependencies, run the following command:
 * npm i moment
 
 ## Usage
-![alt text](./) 
+![alt text](./Develop/public/css/readmeimg.png) 
 <!-- this is where the screenshot of the image will be at -->
 
 ## Contributing
