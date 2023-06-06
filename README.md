@@ -49,7 +49,7 @@ DB_USER='root'
 
 
 ## Deployment
-<!-- this is where the deplyment link will go -->
+<!-- this is where the deplyment link will go --> 
 
 ## Languages
 * JavaScript, HTML, CSS, Node.js, Express.js,Heroku, Moment.js, Axios, Bootstrap
