@@ -30,21 +30,21 @@ To install necessary dependencies, run the following command:
 * npm i moment
 
 ## Usage
-![alt text](./) 
+![alt text](./Develop/readmeimg.png) 
 <!-- this is where the screenshot of the image will be at -->
 
 ## Contributing
-* Daniel Covington - 
-* Annalee Beltran -
-* Josue Lopez -
-* Sam Moore - 
+* Daniel Covington - https://github.com/Daniel-Covington/My_Fitness_Junkie
+* Annalee Beltran - https://github.com/annaleebeltran/My_Fitness_Junkie
+* Josue Lopez - 
+
 
 ## Deployment
 <!-- this is where the deplyment link will go -->
 
 ## Languages
 * JavaScript, HTML, CSS, Node.js, Express.js,Heroku, Moment.js, Axios, Bootstrap
-* hello world
+
 
 
 
