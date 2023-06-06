@@ -36,7 +36,6 @@ window.onload = function populateHeartChart() {
   });
 
 
-
   // adds the data to the chart from JSON //
   function addData(data) {
     for (var i = 0; i < data.length; i++) {
