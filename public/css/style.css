@@ -54,6 +54,22 @@ body {
   border-color: #6667ab;
 }
 
+.btnTime {
+  background-color: #6667ab;
+  padding: 10px;
+  font-family: Oswald;
+  border-radius: 15px;
+  transition-duration: 0.4s;
+  color: white;
+  border-color: #383838;
+}
+
+.btnTime:hover {
+  background-color: white;
+  color: #6667ab;
+  border-color: #6667ab;
+}
+
 #logout:hover {
   background-color: white;
   color: #6667ab;
@@ -255,4 +271,9 @@ body {
   object-fit: cover;
   width: 95%;
   height: 25vw;
+}
+
+.containerSpace{
+  margin-bottom: 5rem;
+  
 }
